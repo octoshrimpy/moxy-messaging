@@ -1,0 +1,46 @@
+{
+  "package": {
+    "productName": "Rust Tauri Error Fixer",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "targets": {
+        "windows": {
+          "target": "msi",
+          "identifier": "com.yourdomain.yourapp"
+        },
+        "macos": {
+          "target": "dmg",
+          "identifier": "com.yourdomain.yourapp"
+        },
+        "linux": {
+          "target": "appimage",
+          "maintainer": "you@yourdomain.com",
+          "vendor": "Your Name",
+          "category": "Utility"
+        }
+      }
+    },
+    "allowlist": {
+      "all": true
+    },
+    "window": {
+      "title": "Rust Tauri Error Fixer",
+      "width": 800,
+      "height": 600,
+      "resizable": true
+    },
+    "security": {
+      "csp": "default-src blob: data: filesystem: ws: http: https: 'unsafe-eval' 'unsafe-inline'"
+    },
+    "inliner": {
+      "active": true
+    }
+  },
+  "build": {
+    "distDir": "../dist",
+    "devPath": "http://localhost:5000"
+  }
+}

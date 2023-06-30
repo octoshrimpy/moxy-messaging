@@ -1,15 +1,11 @@
 [package]
-name = "mobile_messaging_app"
+name = "moxie_messaging"
 version = "0.1.0"
-authors = ["Your Name <your.email@example.com>"]
+authors = ["octoshrimpy <octoshrimpy@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-tauri = "0.14.1"
-
-[dependencies.web-view]
-version = "0.6.3"
-features = ["edge"]
+tauri = "1.4.1"
 
 [dependencies.serde]
 version = "1.0"
@@ -19,11 +15,11 @@ features = ["derive"]
 version = "1.0"
 
 [build-dependencies]
-tauri-build = "0.1"
+tauri-build = "1.4.0"
 
 [[bin]]
-name = "app"
-path = "src/main.rs"
+name = "moxie_messaging"
+path = "main.rs"
 
 [workspace]
 

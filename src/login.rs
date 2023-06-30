@@ -1,4 +1,3 @@
-```rust
 use crate::User;
 
 pub mod signal;
@@ -40,4 +39,3 @@ impl Login {
         self.user.as_ref()
     }
 }
-```

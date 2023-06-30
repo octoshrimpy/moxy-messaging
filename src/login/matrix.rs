@@ -1,4 +1,3 @@
-```rust
 use tauri::Window;
 use serde::{Deserialize, Serialize};
 
@@ -20,4 +19,3 @@ pub async fn login(window: Window, login_data: MatrixLogin) -> Result<(), String
 
     Ok(())
 }
-```

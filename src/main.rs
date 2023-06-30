@@ -1,4 +1,3 @@
-```rust
 extern crate tauri;
 
 mod app;
@@ -13,4 +12,3 @@ fn main() {
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
-```

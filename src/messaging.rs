@@ -1,4 +1,3 @@
-```rust
 use tauri::Manager;
 use serde::{Deserialize, Serialize};
 
@@ -16,4 +15,3 @@ pub async fn send_message(window: tauri::Window, message: Message) -> Result<(),
 pub async fn get_current_message(window: tauri::Window) -> Result<Message, String> {
     window.listen("currentMessage").await.map_err(|err| err.to_string())
 }
-```

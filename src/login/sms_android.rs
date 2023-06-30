@@ -1,4 +1,3 @@
-```rust
 use tauri::api::dialog::message;
 use tauri::api::sms::send;
 
@@ -30,4 +29,3 @@ impl SmsAndroidLogin {
         }
     }
 }
-```

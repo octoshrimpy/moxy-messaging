@@ -1,4 +1,3 @@
-```rust
 use tauri::Manager;
 use crate::login::login;
 use crate::messaging::sendMessage;
@@ -18,4 +17,3 @@ fn main() {
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
-```

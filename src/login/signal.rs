@@ -1,4 +1,3 @@
-```rust
 use crate::User;
 use crate::loggedInUser;
 
@@ -16,4 +15,3 @@ pub fn login(username: String, password: String) -> Result<User, &'static str> {
         Err("Invalid username or password")
     }
 }
-```

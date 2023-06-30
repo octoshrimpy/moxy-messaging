@@ -1,4 +1,3 @@
-```rust
 use tauri::Command;
 use serde::Deserialize;
 
@@ -25,4 +24,3 @@ fn main() {
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
-```

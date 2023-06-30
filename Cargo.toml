@@ -1,0 +1,33 @@
+[package]
+name = "rust_tauri_error_fixer"
+version = "0.1.0"
+authors = ["Your Name <your.email@example.com>"]
+edition = "2018"
+
+[dependencies]
+tauri = "0.14.1"
+serde = "1.0.126"
+serde_json = "1.0.64"
+
+[build-dependencies]
+tauri-build = "0.1"
+
+[workspace]
+
+members = [
+    "src/main.rs",
+    "src/lib.rs",
+    "src/error.rs",
+    "src/utils.rs",
+    "src/config.rs",
+    "src/app.rs",
+    "src/commands.rs",
+    "src/events.rs",
+    "src/setup.rs",
+    "src/build.rs",
+    "src/tests.rs",
+]
+
+[[bin]]
+name = "rust_tauri_error_fixer"
+path = "src/main.rs"

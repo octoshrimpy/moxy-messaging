@@ -1,19 +1,30 @@
-use tauri::Manager;
-use crate::login::login;
-use crate::messaging::sendMessage;
-use crate::compile::compileApp;
+```rust
+use tauri::AppBuilder;
+use crate::error::AppError;
+use crate::config::AppConfig;
+use crate::commands::register_commands;
+use crate::events::register_events;
+use crate::setup::setup_app;
 
-#[derive(Default)]
-struct AppState {
-    loggedInUser: Option<User>,
-    currentPlatform: Option<String>,
-    currentMessage: Option<Message>,
+pub struct Application {
+    config: AppConfig,
 }
 
-fn main() {
-    tauri::Builder::default()
-        .manage(AppState::default())
-        .invoke_handler(tauri::generate_handler![login, sendMessage, compileApp])
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+impl Application {
+    pub fn new() -> Result<Self, AppError> {
+        let config = AppConfig::load()?;
+        Ok(Self { config })
+    }
+
+    pub fn run(&self) -> Result<(), AppError> {
+        let mut app = AppBuilder::new().setup(|app| {
+            setup_app(app, &self.config)
+        });
+
+        register_commands(&mut app)?;
+        register_events(&mut app)?;
+
+        app.run().map_err(|e| AppError::TauriError(e))
+    }
 }
+```

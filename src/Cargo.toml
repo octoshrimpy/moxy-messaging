@@ -1,0 +1,42 @@
+[package]
+name = "mobile_messaging_app"
+version = "0.1.0"
+authors = ["Your Name <your.email@example.com>"]
+edition = "2018"
+
+[dependencies]
+tauri = "0.14.1"
+
+[dependencies.web-view]
+version = "0.6.3"
+features = ["edge"]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+
+[dependencies.serde_json]
+version = "1.0"
+
+[build-dependencies]
+tauri-build = "0.1"
+
+[[bin]]
+name = "app"
+path = "src/main.rs"
+
+[workspace]
+
+[profile.release]
+lto = true
+opt-level = "z"
+codegen-units = 1
+
+[target.'cfg(target_os="android")'.dependencies]
+android_glue = "0.2"
+
+[target.'cfg(target_os="ios")'.dependencies]
+objc = "0.2"
+objc-foundation = "0.1"
+objc_id = "0.1"
+metal = "0.15"
